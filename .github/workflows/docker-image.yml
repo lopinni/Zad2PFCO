@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-push-images:
-    name: Budowa i publikacja obrazw na repozytorium
+    name: Zadanie 2 PFCO
     runs-on: ubuntu-latest
 
     steps:
@@ -30,8 +30,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./
-          file: ./dockerfile.v1
+          file: ./Dockerfile.zad2
           push: true
           tags: |
-            spg51/lab:ghfront1
+            lopinni/zad2pfco:tagname
           
