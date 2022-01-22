@@ -8,7 +8,7 @@ Zadanie 2 zostało wykonane na podstawie projektu udostępnionego w laboratorium
 
 ### Część 1
 
-Część 1 wykorzystuje dockerfile.v1 zawarty już w projekcie z lab 11. Plik yml do budowania znajduje się [tutaj](https://github.com/lopinni/Zad2PFCO/blob/main/.github/workflows/docker-image.yml).
+Część 1 wykorzystuje dockerfile.v1 zawarty już w projekcie z lab 11. Pracę wykonano podobnie jak w instrukcji laboratoryjnej. Plik yml do budowania znajduje się [tutaj](https://github.com/lopinni/Zad2PFCO/blob/main/.github/workflows/docker-image.yml).
 
 ### Część 2
 
