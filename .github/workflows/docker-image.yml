@@ -33,5 +33,5 @@ jobs:
           file: ./Dockerfile.zad2
           push: true
           tags: |
-            lopinni/zad2pfco:tagname
+            lopinni/zad2pfco:cz1
           
