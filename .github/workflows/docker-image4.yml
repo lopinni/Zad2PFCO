@@ -34,5 +34,5 @@ jobs:
           file: ./dockerfile.v1
           push: true
           tags: lopinni/zad2pfco:cz4
-          ache-from: type=registry,ref=lopinni/app:buildcache
+          cache-from: type=registry,ref=lopinni/app:buildcache
           cache-to: type=registry,ref=lopinni/app:buildcache,mode=max
