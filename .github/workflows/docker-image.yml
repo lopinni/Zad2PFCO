@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./
-          file: ./Dockerfile.zad2
+          file: ./dockerfile.v1
           push: true
           tags: |
             lopinni/zad2pfco:cz1
