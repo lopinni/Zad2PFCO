@@ -1,18 +1,37 @@
-name: Docker Image CI
+name: GitHub Action flow to Docker hub 
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-
-  build:
-
+  build-push-images:
+    name: Budowa i publikacja obrazw na repozytorium
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile.zad2 --tag my-image-name:$(date +%s)
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Buildx set-up
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1 
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./dockerfile.v1
+          push: true
+          tags: |
+            spg51/lab:ghfront1
+          
