@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-push-images:
-    name: zadanie 2 pfco 4
+    name: zadanie 2 pfco 4 plus cache
     runs-on: ubuntu-latest
 
     steps:
