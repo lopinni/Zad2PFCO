@@ -13,9 +13,6 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          cache-from: type=registry,ref=IMAGE
-          cache-to: type=registry,ref=IMAGE,mode=max
 
       - name: Buildx set-up
         id: buildx
@@ -32,8 +29,9 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
+          cache-from: type=registry,ref=IMAGE
+          cache-to: type=registry,ref=IMAGE,mode=max
           context: ./
           file: ./dockerfile.v1
           push: true
-          tags: |
-            lopinni/zad2pfco:cz4
+          tags: lopinni/zad2pfco:cz4
